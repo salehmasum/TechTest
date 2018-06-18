@@ -13,6 +13,20 @@
 		CE4873D820D6A55600A52E37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE4873D720D6A55600A52E37 /* Assets.xcassets */; };
 		CE4873DB20D6A55600A52E37 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE4873D920D6A55600A52E37 /* LaunchScreen.storyboard */; };
 		CE4873E620D6A55600A52E37 /* TechTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4873E520D6A55600A52E37 /* TechTestTests.swift */; };
+		CE8FCF7A20D7736E00C2E655 /* ItemListScenePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8FCF7420D7736E00C2E655 /* ItemListScenePresenter.swift */; };
+		CE8FCF7B20D7736E00C2E655 /* ItemListSceneWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8FCF7520D7736E00C2E655 /* ItemListSceneWorker.swift */; };
+		CE8FCF7C20D7736E00C2E655 /* ItemListSceneRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8FCF7620D7736E00C2E655 /* ItemListSceneRouter.swift */; };
+		CE8FCF7D20D7736E00C2E655 /* ItemListSceneModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8FCF7720D7736E00C2E655 /* ItemListSceneModels.swift */; };
+		CE8FCF7E20D7736E00C2E655 /* ItemListSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8FCF7820D7736E00C2E655 /* ItemListSceneViewController.swift */; };
+		CE8FCF7F20D7736E00C2E655 /* ItemListSceneInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8FCF7920D7736E00C2E655 /* ItemListSceneInteractor.swift */; };
+		CE8FCF8620D7738C00C2E655 /* ItemDetailScenePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8FCF8020D7738C00C2E655 /* ItemDetailScenePresenter.swift */; };
+		CE8FCF8720D7738C00C2E655 /* ItemDetailSceneWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8FCF8120D7738C00C2E655 /* ItemDetailSceneWorker.swift */; };
+		CE8FCF8820D7738C00C2E655 /* ItemDetailSceneRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8FCF8220D7738C00C2E655 /* ItemDetailSceneRouter.swift */; };
+		CE8FCF8920D7738C00C2E655 /* ItemDetailSceneModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8FCF8320D7738C00C2E655 /* ItemDetailSceneModels.swift */; };
+		CE8FCF8A20D7738C00C2E655 /* ItemDetailSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8FCF8420D7738C00C2E655 /* ItemDetailSceneViewController.swift */; };
+		CE8FCF8B20D7738C00C2E655 /* ItemDetailSceneInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8FCF8520D7738C00C2E655 /* ItemDetailSceneInteractor.swift */; };
+		CE8FCF8F20D7908200C2E655 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE8FCF8D20D7908200C2E655 /* Kingfisher.framework */; };
+		CE8FCF9020D7908200C2E655 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE8FCF8E20D7908200C2E655 /* Alamofire.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +50,20 @@
 		CE4873E120D6A55600A52E37 /* TechTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TechTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE4873E520D6A55600A52E37 /* TechTestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechTestTests.swift; sourceTree = "<group>"; };
 		CE4873E720D6A55600A52E37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE8FCF7420D7736E00C2E655 /* ItemListScenePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListScenePresenter.swift; sourceTree = "<group>"; };
+		CE8FCF7520D7736E00C2E655 /* ItemListSceneWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListSceneWorker.swift; sourceTree = "<group>"; };
+		CE8FCF7620D7736E00C2E655 /* ItemListSceneRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListSceneRouter.swift; sourceTree = "<group>"; };
+		CE8FCF7720D7736E00C2E655 /* ItemListSceneModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListSceneModels.swift; sourceTree = "<group>"; };
+		CE8FCF7820D7736E00C2E655 /* ItemListSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListSceneViewController.swift; sourceTree = "<group>"; };
+		CE8FCF7920D7736E00C2E655 /* ItemListSceneInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListSceneInteractor.swift; sourceTree = "<group>"; };
+		CE8FCF8020D7738C00C2E655 /* ItemDetailScenePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailScenePresenter.swift; sourceTree = "<group>"; };
+		CE8FCF8120D7738C00C2E655 /* ItemDetailSceneWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailSceneWorker.swift; sourceTree = "<group>"; };
+		CE8FCF8220D7738C00C2E655 /* ItemDetailSceneRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailSceneRouter.swift; sourceTree = "<group>"; };
+		CE8FCF8320D7738C00C2E655 /* ItemDetailSceneModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailSceneModels.swift; sourceTree = "<group>"; };
+		CE8FCF8420D7738C00C2E655 /* ItemDetailSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailSceneViewController.swift; sourceTree = "<group>"; };
+		CE8FCF8520D7738C00C2E655 /* ItemDetailSceneInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailSceneInteractor.swift; sourceTree = "<group>"; };
+		CE8FCF8D20D7908200C2E655 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
+		CE8FCF8E20D7908200C2E655 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +71,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE8FCF8F20D7908200C2E655 /* Kingfisher.framework in Frameworks */,
+				CE8FCF9020D7908200C2E655 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +92,7 @@
 				CE4873CF20D6A55400A52E37 /* TechTest */,
 				CE4873E420D6A55600A52E37 /* TechTestTests */,
 				CE4873CE20D6A55400A52E37 /* Products */,
+				CE8FCF8C20D7908200C2E655 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,6 +108,12 @@
 		CE4873CF20D6A55400A52E37 /* TechTest */ = {
 			isa = PBXGroup;
 			children = (
+				CE8FCF7120D76BDC00C2E655 /* Scenes */,
+				CE8FCF7020D76BA900C2E655 /* Workers */,
+				CE8FCF6F20D76B9600C2E655 /* Services */,
+				CE8FCF6E20D76B7800C2E655 /* Models */,
+				CE8FCF6D20D76B4700C2E655 /* Managers */,
+				CE8FCF6C20D76B0D00C2E655 /* Utilities */,
 				CE4873D020D6A55400A52E37 /* AppDelegate.swift */,
 				CE4873D220D6A55400A52E37 /* ViewController.swift */,
 				CE4873D420D6A55400A52E37 /* Main.storyboard */,
@@ -96,6 +133,85 @@
 			path = TechTestTests;
 			sourceTree = "<group>";
 		};
+		CE8FCF6C20D76B0D00C2E655 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		CE8FCF6D20D76B4700C2E655 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		CE8FCF6E20D76B7800C2E655 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CE8FCF6F20D76B9600C2E655 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		CE8FCF7020D76BA900C2E655 /* Workers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Workers;
+			sourceTree = "<group>";
+		};
+		CE8FCF7120D76BDC00C2E655 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				CE8FCF7220D76EA500C2E655 /* ItemListScene */,
+				CE8FCF7320D76EBA00C2E655 /* ItemDetailScene */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		CE8FCF7220D76EA500C2E655 /* ItemListScene */ = {
+			isa = PBXGroup;
+			children = (
+				CE8FCF7420D7736E00C2E655 /* ItemListScenePresenter.swift */,
+				CE8FCF7520D7736E00C2E655 /* ItemListSceneWorker.swift */,
+				CE8FCF7620D7736E00C2E655 /* ItemListSceneRouter.swift */,
+				CE8FCF7720D7736E00C2E655 /* ItemListSceneModels.swift */,
+				CE8FCF7820D7736E00C2E655 /* ItemListSceneViewController.swift */,
+				CE8FCF7920D7736E00C2E655 /* ItemListSceneInteractor.swift */,
+			);
+			path = ItemListScene;
+			sourceTree = "<group>";
+		};
+		CE8FCF7320D76EBA00C2E655 /* ItemDetailScene */ = {
+			isa = PBXGroup;
+			children = (
+				CE8FCF8020D7738C00C2E655 /* ItemDetailScenePresenter.swift */,
+				CE8FCF8120D7738C00C2E655 /* ItemDetailSceneWorker.swift */,
+				CE8FCF8220D7738C00C2E655 /* ItemDetailSceneRouter.swift */,
+				CE8FCF8320D7738C00C2E655 /* ItemDetailSceneModels.swift */,
+				CE8FCF8420D7738C00C2E655 /* ItemDetailSceneViewController.swift */,
+				CE8FCF8520D7738C00C2E655 /* ItemDetailSceneInteractor.swift */,
+			);
+			path = ItemDetailScene;
+			sourceTree = "<group>";
+		};
+		CE8FCF8C20D7908200C2E655 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CE8FCF8E20D7908200C2E655 /* Alamofire.framework */,
+				CE8FCF8D20D7908200C2E655 /* Kingfisher.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -106,6 +222,7 @@
 				CE4873C920D6A55400A52E37 /* Sources */,
 				CE4873CA20D6A55400A52E37 /* Frameworks */,
 				CE4873CB20D6A55400A52E37 /* Resources */,
+				CE8FCF9120D790E600C2E655 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -192,13 +309,43 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		CE8FCF9120D790E600C2E655 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Kingfisher.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CE4873C920D6A55400A52E37 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE8FCF8720D7738C00C2E655 /* ItemDetailSceneWorker.swift in Sources */,
+				CE8FCF7C20D7736E00C2E655 /* ItemListSceneRouter.swift in Sources */,
+				CE8FCF8920D7738C00C2E655 /* ItemDetailSceneModels.swift in Sources */,
 				CE4873D320D6A55400A52E37 /* ViewController.swift in Sources */,
 				CE4873D120D6A55400A52E37 /* AppDelegate.swift in Sources */,
+				CE8FCF7A20D7736E00C2E655 /* ItemListScenePresenter.swift in Sources */,
+				CE8FCF7F20D7736E00C2E655 /* ItemListSceneInteractor.swift in Sources */,
+				CE8FCF8820D7738C00C2E655 /* ItemDetailSceneRouter.swift in Sources */,
+				CE8FCF8620D7738C00C2E655 /* ItemDetailScenePresenter.swift in Sources */,
+				CE8FCF8A20D7738C00C2E655 /* ItemDetailSceneViewController.swift in Sources */,
+				CE8FCF7B20D7736E00C2E655 /* ItemListSceneWorker.swift in Sources */,
+				CE8FCF7E20D7736E00C2E655 /* ItemListSceneViewController.swift in Sources */,
+				CE8FCF7D20D7736E00C2E655 /* ItemListSceneModels.swift in Sources */,
+				CE8FCF8B20D7738C00C2E655 /* ItemDetailSceneInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,6 +507,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M5JCS9BP69;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = TechTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -378,6 +529,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M5JCS9BP69;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = TechTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
