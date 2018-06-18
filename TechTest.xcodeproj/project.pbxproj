@@ -27,6 +27,11 @@
 		CE8FCF8B20D7738C00C2E655 /* ItemDetailSceneInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8FCF8520D7738C00C2E655 /* ItemDetailSceneInteractor.swift */; };
 		CE8FCF8F20D7908200C2E655 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE8FCF8D20D7908200C2E655 /* Kingfisher.framework */; };
 		CE8FCF9020D7908200C2E655 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE8FCF8E20D7908200C2E655 /* Alamofire.framework */; };
+		CE8FCF9820D7A13600C2E655 /* NetworkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8FCF9720D7A13600C2E655 /* NetworkRouter.swift */; };
+		CE8FCF9A20D7A3FA00C2E655 /* ItemService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8FCF9920D7A3FA00C2E655 /* ItemService.swift */; };
+		CE8FCF9C20D7A4EB00C2E655 /* ServiceProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8FCF9B20D7A4EB00C2E655 /* ServiceProtocols.swift */; };
+		CE8FCF9E20D7A69900C2E655 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8FCF9D20D7A69900C2E655 /* Item.swift */; };
+		CE8FCFA020D7AD6300C2E655 /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8FCF9F20D7AD6300C2E655 /* CustomError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +69,11 @@
 		CE8FCF8520D7738C00C2E655 /* ItemDetailSceneInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailSceneInteractor.swift; sourceTree = "<group>"; };
 		CE8FCF8D20D7908200C2E655 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
 		CE8FCF8E20D7908200C2E655 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		CE8FCF9720D7A13600C2E655 /* NetworkRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRouter.swift; sourceTree = "<group>"; };
+		CE8FCF9920D7A3FA00C2E655 /* ItemService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemService.swift; sourceTree = "<group>"; };
+		CE8FCF9B20D7A4EB00C2E655 /* ServiceProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProtocols.swift; sourceTree = "<group>"; };
+		CE8FCF9D20D7A69900C2E655 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		CE8FCF9F20D7AD6300C2E655 /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +146,7 @@
 		CE8FCF6C20D76B0D00C2E655 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				CE8FCF9F20D7AD6300C2E655 /* CustomError.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -143,6 +154,8 @@
 		CE8FCF6D20D76B4700C2E655 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				CE8FCF9620D79EE200C2E655 /* NetworkManager */,
+				CE8FCF9520D79EC600C2E655 /* DatabaseManager */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -150,6 +163,7 @@
 		CE8FCF6E20D76B7800C2E655 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				CE8FCF9D20D7A69900C2E655 /* Item.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -157,6 +171,8 @@
 		CE8FCF6F20D76B9600C2E655 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				CE8FCF9920D7A3FA00C2E655 /* ItemService.swift */,
+				CE8FCF9B20D7A4EB00C2E655 /* ServiceProtocols.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -210,6 +226,21 @@
 				CE8FCF8D20D7908200C2E655 /* Kingfisher.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CE8FCF9520D79EC600C2E655 /* DatabaseManager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DatabaseManager;
+			sourceTree = "<group>";
+		};
+		CE8FCF9620D79EE200C2E655 /* NetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				CE8FCF9720D7A13600C2E655 /* NetworkRouter.swift */,
+			);
+			path = NetworkManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -334,15 +365,20 @@
 			files = (
 				CE8FCF8720D7738C00C2E655 /* ItemDetailSceneWorker.swift in Sources */,
 				CE8FCF7C20D7736E00C2E655 /* ItemListSceneRouter.swift in Sources */,
+				CE8FCF9820D7A13600C2E655 /* NetworkRouter.swift in Sources */,
+				CE8FCF9C20D7A4EB00C2E655 /* ServiceProtocols.swift in Sources */,
 				CE8FCF8920D7738C00C2E655 /* ItemDetailSceneModels.swift in Sources */,
 				CE4873D320D6A55400A52E37 /* ViewController.swift in Sources */,
 				CE4873D120D6A55400A52E37 /* AppDelegate.swift in Sources */,
+				CE8FCFA020D7AD6300C2E655 /* CustomError.swift in Sources */,
 				CE8FCF7A20D7736E00C2E655 /* ItemListScenePresenter.swift in Sources */,
 				CE8FCF7F20D7736E00C2E655 /* ItemListSceneInteractor.swift in Sources */,
 				CE8FCF8820D7738C00C2E655 /* ItemDetailSceneRouter.swift in Sources */,
+				CE8FCF9E20D7A69900C2E655 /* Item.swift in Sources */,
 				CE8FCF8620D7738C00C2E655 /* ItemDetailScenePresenter.swift in Sources */,
 				CE8FCF8A20D7738C00C2E655 /* ItemDetailSceneViewController.swift in Sources */,
 				CE8FCF7B20D7736E00C2E655 /* ItemListSceneWorker.swift in Sources */,
+				CE8FCF9A20D7A3FA00C2E655 /* ItemService.swift in Sources */,
 				CE8FCF7E20D7736E00C2E655 /* ItemListSceneViewController.swift in Sources */,
 				CE8FCF7D20D7736E00C2E655 /* ItemListSceneModels.swift in Sources */,
 				CE8FCF8B20D7738C00C2E655 /* ItemDetailSceneInteractor.swift in Sources */,
