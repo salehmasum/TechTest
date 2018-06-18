@@ -11,6 +11,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 protocol ItemListSceneDisplayLogic: class
 {
@@ -18,7 +19,7 @@ protocol ItemListSceneDisplayLogic: class
   func presentError(error: Error)
 }
 
-class ItemListSceneViewController: UIViewController, ItemListSceneDisplayLogic
+class ItemListSceneViewController: UIViewController, ItemListSceneDisplayLogic, UICollectionViewDataSource, UICollectionViewDelegate
 {
   var interactor: ItemListSceneBusinessLogic?
   var router: (NSObjectProtocol & ItemListSceneRoutingLogic & ItemListSceneDataPassing)?
@@ -70,26 +71,82 @@ class ItemListSceneViewController: UIViewController, ItemListSceneDisplayLogic
   override func viewDidLoad()
   {
     super.viewDidLoad()
+    collectionView.dataSource = self
+    collectionView.delegate   = self
+    
     requestToLoadItemList()
   }
   
   // MARK: Properties
+  
+  @IBOutlet weak var collectionView: UICollectionView!
+  var viewModel: ItemListScene.ItemList.ViewModel?
     
   func requestToLoadItemList()
   {
+    UIApplication.shared.isNetworkActivityIndicatorVisible = true
     interactor?.loadItemList(request: ItemListScene.ItemList.Request())
   }
   
   func displayItems(viewModel: ItemListScene.ItemList.ViewModel)
   {
+    UIApplication.shared.isNetworkActivityIndicatorVisible = false
     print(viewModel)
-    
+    self.viewModel = viewModel
+    self.collectionView.reloadData()
   }
   
   func presentError(error: Error)
   {
+    UIApplication.shared.isNetworkActivityIndicatorVisible = false
     print(error)
+    showAlertWithMessge(message: error.localizedDescription)
   }
+  
+  //MARK: collectionview delegate and data source
+  
+  func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    if let viewModel = self.viewModel {
+      return viewModel.itemArray.count
+    }else {
+      return 0
+    }
+  }
+  
+  func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath)
+    let imageView  = cell.viewWithTag(1) as! UIImageView
+    let titleLabel = cell.viewWithTag(2) as! UILabel
     
+    let currentItem = viewModel!.itemArray[indexPath.item]
+    if let titleText = currentItem.title {
+      titleLabel.text = titleText
+    }
+    if let imageUrlStr = currentItem.imageHref {
+      let url = URL(string: imageUrlStr)
+      imageView.kf.setImage(with: url, completionHandler: {
+        (image, error, cacheType, imageUrl) in
+        if error != nil {
+         // imageView.image = UIImage(named: "no_image")
+        }
+      })
+    }
     
+    return cell
+    
+  }
+    //
+    
+}
+
+extension ItemListSceneViewController {
+  
+  func showAlertWithMessge(message: String)
+  {
+    let alertController = UIAlertController(title: "", message: message, preferredStyle: .alert)
+    let OKAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+    alertController.addAction(OKAction)
+    present(alertController, animated: true)
+  }
+  
 }
