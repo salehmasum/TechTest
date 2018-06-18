@@ -14,7 +14,17 @@ import UIKit
 
 class ItemListSceneWorker
 {
-  func doSomeWork()
+  var loadItemListService: LoadItemProtocol
+  
+  init(loadItemListService: LoadItemProtocol)
   {
+    self.loadItemListService = loadItemListService
   }
+  
+  func initiateLoadingItemCollection(withCredentials payload: ItemListScene.ItemList.Request, completionHandler: @escaping (ItemCollection?, Error?) -> Void ) {
+    self.loadItemListService.loadItemListRequest(withCredentials: payload) { (responseObject, error) in
+      completionHandler(responseObject, error)
+    }
+  }
+  
 }

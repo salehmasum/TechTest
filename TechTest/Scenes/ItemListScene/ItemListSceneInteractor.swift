@@ -14,35 +14,34 @@ import UIKit
 
 protocol ItemListSceneBusinessLogic
 {
-  func doSomething(request: ItemListScene.Something.Request)
   func loadItemList(request: ItemListScene.ItemList.Request)
 }
 
 protocol ItemListSceneDataStore
 {
-  //var name: String { get set }
+  var responseModel: ItemCollection? { get }
 }
 
 class ItemListSceneInteractor: ItemListSceneBusinessLogic, ItemListSceneDataStore
 {
   var presenter: ItemListScenePresentationLogic?
-  var worker: ItemListSceneWorker?
-  //var name: String = ""
   
-  // MARK: Do something
+  //MARK: We are injecting ItemService as a Dependency to ItemSceneWorker to achieve decouple design
+  var itemListWorker = ItemListSceneWorker(loadItemListService: ItemService())
   
-  func doSomething(request: ItemListScene.Something.Request)
-  {
-    worker = ItemListSceneWorker()
-    worker?.doSomeWork()
-    
-    let response = ItemListScene.Something.Response()
-    presenter?.presentSomething(response: response)
-  }
+  var responseModel: ItemCollection?
   
   func loadItemList(request: ItemListScene.ItemList.Request)
   {
-    
+    itemListWorker.initiateLoadingItemCollection(withCredentials: request) { (responseModel, error) in
+      if let responseModel = responseModel {
+        let itemListResponseModel = ItemListScene.ItemList.Response(responseModel: responseModel)
+        self.presenter?.presentItemCollectionResponseModel(response: itemListResponseModel)
+        self.responseModel = responseModel
+      }else {
+        self.presenter?.presentError(error: error!)
+      }
+    }
   }
   
 }

@@ -22,8 +22,29 @@ class ItemService: LoadItemProtocol
           switch (httpStatusCode) {
           case 200..<300:
             do{
-              let itemList = try JSONDecoder().decode(ItemCollection.self, from: value)
-              completionHandler(itemList, nil)
+              //print(value)
+              guard let datastring = NSString(data: response.data!, encoding: String.Encoding.isoLatin1.rawValue) else { return }
+              guard let data = datastring.data(using: String.Encoding.utf8.rawValue) else { return }
+              
+              let object = try JSONSerialization.jsonObject(with: data, options: .allowFragments)
+              let jsonDic = object as! NSDictionary
+              let itemArray = jsonDic.object(forKey: "rows") as! NSArray
+              var items = [Item]()
+              for dict in itemArray
+              {
+                let itemDict        = dict as! NSDictionary
+                let itemTitle       = itemDict["title"] as? String
+                let itemDescription = itemDict["description"] as? String
+                let itemImageUrl    = itemDict["imageHref"] as? String
+                
+                let itemObject      = Item(title: itemTitle, description: itemDescription, imageHref: itemImageUrl)
+                items.append(itemObject)
+              }
+              
+              let itemCollection = ItemCollection(title: "", rows: items)
+              
+              completionHandler(itemCollection, nil)
+              
             }catch(let error) {
               completionHandler(nil, error)
             }

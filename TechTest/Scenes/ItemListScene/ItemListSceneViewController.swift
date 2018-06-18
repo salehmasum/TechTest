@@ -14,7 +14,8 @@ import UIKit
 
 protocol ItemListSceneDisplayLogic: class
 {
-  func displaySomething(viewModel: ItemListScene.Something.ViewModel)
+  func displayItems(viewModel: ItemListScene.ItemList.ViewModel)
+  func presentError(error: Error)
 }
 
 class ItemListSceneViewController: UIViewController, ItemListSceneDisplayLogic
@@ -69,28 +70,25 @@ class ItemListSceneViewController: UIViewController, ItemListSceneDisplayLogic
   override func viewDidLoad()
   {
     super.viewDidLoad()
-    doSomething()
     requestToLoadItemList()
   }
   
-  // MARK: Do something
-  
-  //@IBOutlet weak var nameTextField: UITextField!
+  // MARK: Properties
     
-  
-  func doSomething()
+  func requestToLoadItemList()
   {
-    let request = ItemListScene.Something.Request()
-    interactor?.doSomething(request: request)
+    interactor?.loadItemList(request: ItemListScene.ItemList.Request())
   }
   
-  func displaySomething(viewModel: ItemListScene.Something.ViewModel)
+  func displayItems(viewModel: ItemListScene.ItemList.ViewModel)
   {
-    //nameTextField.text = viewModel.name
+    print(viewModel)
+    
   }
-    
-  func requestToLoadItemList() {
-    
+  
+  func presentError(error: Error)
+  {
+    print(error)
   }
     
     

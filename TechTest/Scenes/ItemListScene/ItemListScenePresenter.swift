@@ -14,18 +14,25 @@ import UIKit
 
 protocol ItemListScenePresentationLogic
 {
-  func presentSomething(response: ItemListScene.Something.Response)
+  func presentItemCollectionResponseModel(response: ItemListScene.ItemList.Response)
+  func presentError(error: Error)
 }
 
 class ItemListScenePresenter: ItemListScenePresentationLogic
 {
   weak var viewController: ItemListSceneDisplayLogic?
   
-  // MARK: Do something
+  // MARK: make view model here and dispatch to view controller
   
-  func presentSomething(response: ItemListScene.Something.Response)
+  func presentItemCollectionResponseModel(response: ItemListScene.ItemList.Response)
   {
-    let viewModel = ItemListScene.Something.ViewModel()
-    viewController?.displaySomething(viewModel: viewModel)
+    let viewModel = ItemListScene.ItemList.ViewModel(itemArray: response.responseModel.rows)
+    viewController?.displayItems(viewModel: viewModel)
   }
+  
+  func presentError(error: Error)
+  {
+    viewController?.presentError(error: error)
+  }
+  
 }

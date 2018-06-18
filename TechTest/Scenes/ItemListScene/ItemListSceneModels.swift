@@ -16,33 +16,23 @@ enum ItemListScene
 {
   // MARK: Use cases
   
-  enum Something
-  {
-    struct Request
-    {
-    }
-    struct Response
-    {
-    }
-    struct ViewModel
-    {
-    }
-  }
-  
   enum ItemList
   {
     struct Request
     {
       
     }
+    
     struct Response
     {
-      
+      var responseModel: ItemCollection
     }
+    
     struct ViewModel
     {
-      
+      var itemArray: [Item]
     }
+    
   }
   
 }

@@ -8,13 +8,13 @@
 
 import Foundation
 
-struct ItemCollection: Codable {
-  let title: String = ""
-  let rows : [Item] = [Item]()
+struct ItemCollection {
+  let title: String?
+  let rows : [Item]
 }
 
-struct Item: Codable {
-  let title: String = ""
-  let description: String = ""
-  let imageHref: URL? = nil
+struct Item {
+  let title: String?
+  let description: String?
+  let imageHref: String?
 }
