@@ -74,6 +74,9 @@ class ItemDetailSceneViewController: UIViewController, ItemDetailSceneDisplayLog
   }
   
   // MARK: Properties
+  @IBOutlet weak var imageView: UIImageView!
+  @IBOutlet weak var textView: UITextView!
+  @IBOutlet weak var stackView: UIStackView!
   
   
   func getItemDetail()
@@ -84,7 +87,24 @@ class ItemDetailSceneViewController: UIViewController, ItemDetailSceneDisplayLog
   func displayItemDetail(viewModel: ItemDetailScene.ItemDetail.ViewModel)
   {
     print(viewModel.selectedItem)
-    
+    populateView(item: viewModel.selectedItem)
+  }
+  
+  func populateView(item: Item)
+  {
+    if let title = item.title
+    {
+      self.navigationItem.title = title
+    }
+    if let description = item.description
+    {
+      self.textView.text = description
+    }
+    if let urlString = item.imageHref
+    {
+      let url = URL(string: urlString)
+      imageView.kf.setImage(with: url)
+    }
   }
   
   
