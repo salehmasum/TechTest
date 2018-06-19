@@ -17,7 +17,7 @@ class ItemService: LoadItemProtocol
       //
       debugPrint(response)
       switch response.result {
-      case .success(let value):
+      case .success( _):
         if let httpStatusCode = response.response?.statusCode {
           switch (httpStatusCode) {
           case 200..<300:

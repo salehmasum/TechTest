@@ -73,15 +73,32 @@ class ItemListSceneViewController: UIViewController, ItemListSceneDisplayLogic, 
     super.viewDidLoad()
     collectionView.dataSource = self
     collectionView.delegate   = self
-    
+    setupRefreshControl()
     requestToLoadItemList()
   }
   
   // MARK: Properties
-  
+  let refreshControl = UIRefreshControl()
   @IBOutlet weak var collectionView: UICollectionView!
   var viewModel: ItemListScene.ItemList.ViewModel?
-    
+  
+  func setupRefreshControl()
+  {
+    // Add Refresh Control to Table View
+    if #available(iOS 10.0, *) {
+      collectionView.refreshControl = refreshControl
+    } else {
+      collectionView.addSubview(refreshControl)
+    }
+    // Configure Refresh Control
+    refreshControl.addTarget(self, action: #selector(loadItemData(_:)), for: .valueChanged)
+  }
+  
+  @objc private func loadItemData(_ sender: Any) {
+    // Fetch Weather Data
+    requestToLoadItemList()
+  }
+  
   func requestToLoadItemList()
   {
     UIApplication.shared.isNetworkActivityIndicatorVisible = true
@@ -90,6 +107,7 @@ class ItemListSceneViewController: UIViewController, ItemListSceneDisplayLogic, 
   
   func displayItems(viewModel: ItemListScene.ItemList.ViewModel)
   {
+    self.refreshControl.endRefreshing()
     UIApplication.shared.isNetworkActivityIndicatorVisible = false
     print(viewModel)
     self.viewModel = viewModel
@@ -98,6 +116,7 @@ class ItemListSceneViewController: UIViewController, ItemListSceneDisplayLogic, 
   
   func presentError(error: Error)
   {
+    self.refreshControl.endRefreshing()
     UIApplication.shared.isNetworkActivityIndicatorVisible = false
     print(error)
     showAlertWithMessge(message: error.localizedDescription)

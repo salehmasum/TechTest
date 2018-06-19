@@ -125,7 +125,6 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="imageView" destination="K0y-tv-zAI" id="zMJ-pZ-Jz8"/>
-                        <outlet property="stackView" destination="VHC-y0-0Hc" id="eFl-jf-qYi"/>
                         <outlet property="textView" destination="ZdU-6r-8X3" id="SS3-wi-qLd"/>
                     </connections>
                 </viewController>

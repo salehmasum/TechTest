@@ -74,9 +74,9 @@ class ItemDetailSceneViewController: UIViewController, ItemDetailSceneDisplayLog
   }
   
   // MARK: Properties
+  
   @IBOutlet weak var imageView: UIImageView!
   @IBOutlet weak var textView: UITextView!
-  @IBOutlet weak var stackView: UIStackView!
   
   
   func getItemDetail()
