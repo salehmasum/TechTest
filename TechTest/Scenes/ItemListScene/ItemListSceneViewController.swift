@@ -103,7 +103,7 @@ class ItemListSceneViewController: UIViewController, ItemListSceneDisplayLogic, 
     showAlertWithMessge(message: error.localizedDescription)
   }
   
-  //MARK: collectionview delegate and data source
+  //MARK: collectionview data source
   
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     if let viewModel = self.viewModel {
@@ -127,7 +127,7 @@ class ItemListSceneViewController: UIViewController, ItemListSceneDisplayLogic, 
       imageView.kf.setImage(with: url, completionHandler: {
         (image, error, cacheType, imageUrl) in
         if error != nil {
-         // imageView.image = UIImage(named: "no_image")
+          imageView.image = UIImage(named: "no_image")
         }
       })
     }
@@ -136,6 +136,13 @@ class ItemListSceneViewController: UIViewController, ItemListSceneDisplayLogic, 
     
   }
     //
+  
+  //MARK: collection view delegate
+  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
+  {
+    router?.routeToItemDetail(segue: nil)
+  }
+  
     
 }
 

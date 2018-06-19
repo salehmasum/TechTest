@@ -16,7 +16,7 @@ enum ItemDetailScene
 {
   // MARK: Use cases
   
-  enum Something
+  enum ItemDetail
   {
     struct Request
     {
@@ -26,6 +26,8 @@ enum ItemDetailScene
     }
     struct ViewModel
     {
+      var selectedItem: Item
     }
   }
+  //
 }

@@ -14,18 +14,19 @@ import UIKit
 
 protocol ItemDetailScenePresentationLogic
 {
-  func presentSomething(response: ItemDetailScene.Something.Response)
+  func presentItemDetail(itemDetailObject: Item)
 }
 
 class ItemDetailScenePresenter: ItemDetailScenePresentationLogic
 {
   weak var viewController: ItemDetailSceneDisplayLogic?
   
-  // MARK: Do something
+  // MARK: make model presentable
   
-  func presentSomething(response: ItemDetailScene.Something.Response)
+  func presentItemDetail(itemDetailObject: Item)
   {
-    let viewModel = ItemDetailScene.Something.ViewModel()
-    viewController?.displaySomething(viewModel: viewModel)
+    let viewModel = ItemDetailScene.ItemDetail.ViewModel(selectedItem: itemDetailObject)
+    viewController?.displayItemDetail(viewModel: viewModel)
   }
+  
 }

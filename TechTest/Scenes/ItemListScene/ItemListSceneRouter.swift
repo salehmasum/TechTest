@@ -14,7 +14,7 @@ import UIKit
 
 @objc protocol ItemListSceneRoutingLogic
 {
-  //func routeToSomewhere(segue: UIStoryboardSegue?)
+  func routeToItemDetail(segue: UIStoryboardSegue?)
 }
 
 protocol ItemListSceneDataPassing
@@ -29,32 +29,37 @@ class ItemListSceneRouter: NSObject, ItemListSceneRoutingLogic, ItemListSceneDat
   
   // MARK: Routing
   
-  //func routeToSomewhere(segue: UIStoryboardSegue?)
-  //{
-  //  if let segue = segue {
-  //    let destinationVC = segue.destination as! SomewhereViewController
-  //    var destinationDS = destinationVC.router!.dataStore!
-  //    passDataToSomewhere(source: dataStore!, destination: &destinationDS)
-  //  } else {
-  //    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-  //    let destinationVC = storyboard.instantiateViewController(withIdentifier: "SomewhereViewController") as! SomewhereViewController
-  //    var destinationDS = destinationVC.router!.dataStore!
-  //    passDataToSomewhere(source: dataStore!, destination: &destinationDS)
-  //    navigateToSomewhere(source: viewController!, destination: destinationVC)
-  //  }
-  //}
+  func routeToItemDetail(segue: UIStoryboardSegue?)
+  {
+    if let _ = segue {
+    //  let destinationVC = segue.destination as! SomewhereViewController
+    //  var destinationDS = destinationVC.router!.dataStore!
+     // passDataToSomewhere(source: dataStore!, destination: &destinationDS)
+    } else {
+      let storyboard = UIStoryboard(name: "Main", bundle: nil)
+      let destinationVC = storyboard.instantiateViewController(withIdentifier: "ItemDetailSceneViewController") as! ItemDetailSceneViewController
+      var destinationDS = destinationVC.router!.dataStore!
+      passDataToSomewhere(source: dataStore!, destination: &destinationDS)
+      navigateToSomewhere(source: viewController!, destination: destinationVC)
+    }
+  }
 
   // MARK: Navigation
   
-  //func navigateToSomewhere(source: ItemListSceneViewController, destination: SomewhereViewController)
-  //{
-  //  source.show(destination, sender: nil)
-  //}
+  func navigateToSomewhere(source: ItemListSceneViewController, destination: ItemDetailSceneViewController)
+  {
+    source.show(destination, sender: nil)
+  }
   
-  // MARK: Passing data
+   //MARK: Passing data
   
-  //func passDataToSomewhere(source: ItemListSceneDataStore, destination: inout SomewhereDataStore)
-  //{
-  //  destination.name = source.name
-  //}
+  func passDataToSomewhere(source: ItemListSceneDataStore, destination: inout ItemDetailSceneDataStore)
+  {
+    let sourceViewModel = viewController?.viewModel
+    guard let indexPaths = viewController!.collectionView!.indexPathsForSelectedItems else { return }
+    let indexPath : NSIndexPath = indexPaths[0] as NSIndexPath
+    let selectedItem = sourceViewModel?.itemArray[indexPath.item]
+    destination.selectedItem = selectedItem
+    
+  }
 }

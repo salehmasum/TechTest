@@ -14,7 +14,7 @@ import UIKit
 
 protocol ItemDetailSceneDisplayLogic: class
 {
-  func displaySomething(viewModel: ItemDetailScene.Something.ViewModel)
+  func displayItemDetail(viewModel: ItemDetailScene.ItemDetail.ViewModel)
 }
 
 class ItemDetailSceneViewController: UIViewController, ItemDetailSceneDisplayLogic
@@ -69,21 +69,23 @@ class ItemDetailSceneViewController: UIViewController, ItemDetailSceneDisplayLog
   override func viewDidLoad()
   {
     super.viewDidLoad()
-    doSomething()
+    getItemDetail()
+    
   }
   
-  // MARK: Do something
+  // MARK: Properties
   
-  //@IBOutlet weak var nameTextField: UITextField!
   
-  func doSomething()
+  func getItemDetail()
   {
-    let request = ItemDetailScene.Something.Request()
-    interactor?.doSomething(request: request)
+    interactor?.getItemDetail()
   }
   
-  func displaySomething(viewModel: ItemDetailScene.Something.ViewModel)
+  func displayItemDetail(viewModel: ItemDetailScene.ItemDetail.ViewModel)
   {
-    //nameTextField.text = viewModel.name
+    print(viewModel.selectedItem)
+    
   }
+  
+  
 }

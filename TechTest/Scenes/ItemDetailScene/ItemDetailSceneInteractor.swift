@@ -14,28 +14,26 @@ import UIKit
 
 protocol ItemDetailSceneBusinessLogic
 {
-  func doSomething(request: ItemDetailScene.Something.Request)
+  func getItemDetail()
 }
 
 protocol ItemDetailSceneDataStore
 {
-  //var name: String { get set }
+  var selectedItem: Item? { set get }
 }
 
 class ItemDetailSceneInteractor: ItemDetailSceneBusinessLogic, ItemDetailSceneDataStore
 {
   var presenter: ItemDetailScenePresentationLogic?
   var worker: ItemDetailSceneWorker?
-  //var name: String = ""
+  var selectedItem: Item?
   
-  // MARK: Do something
-  
-  func doSomething(request: ItemDetailScene.Something.Request)
+  // MARK: send itemDetail Model to presenter
+  func getItemDetail()
   {
-    worker = ItemDetailSceneWorker()
-    worker?.doSomeWork()
-    
-    let response = ItemDetailScene.Something.Response()
-    presenter?.presentSomething(response: response)
+    guard let item = selectedItem else { return }
+    presenter?.presentItemDetail(itemDetailObject: item)
   }
+  
+  
 }
